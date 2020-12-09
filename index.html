@@ -1,1 +1,114 @@
-Coming soon...
+<!DOCTYPE html>
+<html>
+<title>Multifactor Manifesto</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body, h1 {font-family: "Raleway", sans-serif}
+/* body, html {height: 100%} */
+.bgimg {
+  background-image: url('background.webp');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.main {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.invert {
+  -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+          filter: invert(100%);
+}
+</style>
+<body class="bgimg w3-container">
+
+<div class="w3-display-container w3-animate-opacity w3-text-white">
+  <div class="main w3-display-topmiddle w3-padding-large">
+    <h1 class="w3-jumbo w3-center">Multifactor Manifesto</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">
+        <img src="person-24px.svg" class="invert" />
+        For consumers: If you value your financial and cyber security, share this with your banks, email provider,
+        and any other internet service you use.
+    </p>
+    <p class="w3-large w3-center">
+        <img src="business-24px.svg" class="invert" />
+        For banks, email providers, and providers of other important internet services: If you value your customers'
+        security, you should follow these guidelines.
+    </p>
+    <p class="w3-large w3-center">
+        <ul>
+            <li>
+                Allow customers to register U2F or FIDO2 (WebAuthn) keys, such as Yubikeys. These provide protection
+                against phishing, which authentication codes do not.
+            </li>
+            <li>
+                Allow customers to register <em>multiple</em> U2F or FIDO2 keys. In order to prevent lockout if a
+                single key is lost or damaged, your service must support multiple keys.
+            </li>
+            <li>
+                Allow customers to download backup codes, which are at least 16 characters long each and consist of
+                uppercase, lowercase and numeric characters. These can further prevent lockout if all security keys are
+                lost or damaged. Your company should treat these as passwords, and only store secure hashes of them so
+                that if your database of them is breached, hackers cannot use them.
+            </li>
+        </ul>
+    </p>
+    <p class="w3-large w3-center">
+        You <em>may</em> provide the following forms of multifactor authentication, but must allow customers to reject
+        them. That is, you must not require them as a fallback or backup. While these are all better than no multifactor
+        authentication, they are all susceptible to phishing attacks.
+    </p>
+    <p class="w3-large w3-center">
+        <ul>
+            <li>
+                Push notifications to phones. Even when they say from which city or IP the request is made, hackers
+                can easily do man-in-the-middle attacks in the same city as the customer, and most customers don't
+                know their IP.
+            </li>
+            <li>
+                Authenticator codes / apps (also known as Time-based One Time Passwords, or TOTP). Besides
+                being susceptible to man-in-the-middle phishing attacks, these are also susceptible to data breaches.
+                The secret from which time-based codes are generated must be known to the service in order to validate
+                codes. Hence a breach may expose it and hackers could generate their own codes from it.
+            </li>
+            <li>
+                Text messages (SMS) or phone calls. These are especially bad. Besides being susceptible to all of the
+                above attacks, they're also susceptible to
+                <a href="https://en.wikipedia.org/wiki/SIM_swap_scam">SIM swapping</a>. SIM swapping is one of the
+                easiest and most common attacks for hackers to implement.
+            </li>
+        </ul>
+    </p>
+    <p class="w3-large w3-center">
+        You must not use "security questions" based on public information.
+    </p>
+    <p class="w3-large w3-center">
+        <ul>
+            <li>
+                Answers to questions such as, "What street did you grow up on?", or, "Where did you go to high school?",
+                are easily found on many people's public Facebook profiles or other public information. These questions offer
+                very little protection against targeted identity theft and give people a false sense of security.
+            </li>
+        </ul>  
+    </p>
+    <p class="w3-large w3-center">
+        Password resetting is often the weakest link of security.
+    </p>
+    <p class="w3-large w3-center">
+        <ul>
+            <li>
+                If a customer forgets their password, and has multifactor authentication enabled, then you must require
+                multifactor authentication before sending a reset link to their email.
+            </li>
+        </ul>  
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
