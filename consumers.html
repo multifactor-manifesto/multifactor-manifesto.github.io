@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>Multifactor Manifesto</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body, h1 {font-family: "Raleway", sans-serif}
+/* body, html {height: 100%} */
+.bgimg {
+  background-image: url('background.webp');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.main {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.navigation ul {
+  list-style-type: none;
+}
+.invert {
+  -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+          filter: invert(100%);
+}
+</style>
+<body class="bgimg w3-container">
+
+<div class="w3-display-container w3-animate-opacity w3-text-white">
+  <div class="navigation w3-display-topleft w3-padding-large">
+    Links
+    <ul>
+        <li><a href="index.html">Provider best practices</a></li>
+        <li><a href="https://github.com/multifactor-manifesto/multifactor-manifesto.github.io">Contribute</a></li>
+    </ul>
+  </div>
+  <div class="main w3-display-topmiddle w3-padding-large">
+    <h1 class="w3-jumbo w3-center">Multifactor Manifesto</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">
+        Use YubiKeys or comparible hardware whenever possible. Prefer websites that offer U2F or FIDO2 (WebAuthn),
+        as this offers the best protection against phishing and data breaches. Hardware keys with biometrics or PINs
+        are even better, so long as they support U2F or FIDO2.
+    </p>
+    <p class="w3-large w3-center">
+        To avoid being locked out of your accounts, register multiple hardware keys. Keep them in different places,
+        such as one in your pocket, and one at home, at your office, car, in a safety deposit box, or at a trusted
+        friend or relative's house (maybe even hide it there so they don't know about it). You don't want all your
+        hardware keys at home, in case of something like a fire or robbery. Label your keys so you can easily revoke any
+        that's lost or compromised.
+    </p>
+    <p class="w3-large w3-center">
+        If you're still worried about being locked out of an account, you may want to save some backup codes someplace
+        safe. Just don't put them on your phone or on your computer where they could be found by anyone with access to
+        your device. The reason is that account recovery (forgotten password) often only requires access to email and
+        one form of multifactor authentication (MFA). Hence, if you're already logged into your email on your phone or
+        computer, and someone gains access and can also find your backup codes, then they may be able to takeover your
+        accounts.
+    </p>
+    <p class="w3-large w3-center">
+        If a provider does not provide support for U2F or FIDO2 hardware keys, then share <a href="/">this site</a>
+        with them. If you still must use their service, then opt for push notifications. If they don't support that, then
+        opt for an authenticator app (also known as Time-based One Time Passwords, or TOTP).
+    </p>
+    <p class="w3-large w3-center">
+        Although better than nothing, avoid SMS-based MFA if there are other options. It's susceptible
+        to social engineering, in addition to phishing and data breaches. If there's no other choice, try to use a
+        carrier that provides some protections against this, such as setting a PIN on your account, or <a
+        href="https://www.bleepingcomputer.com/news/security/how-to-protect-your-verizon-number-from-sim-swapping-attacks/">
+        locking your phone number</a>.
+    </p>
+    <p class="w3-large w3-center">
+        If your provider offers strong MFA (like U2F keys) but forces you to have a weaker backup (like SMS),
+        then still use the strongest form possible as your primary means. If you normally use U2F, then you'll be safe
+        from phishing, and if your "provider" ever asks you to use a different form of MFA, then you'll at least be
+        highly suspicious and on your guard.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

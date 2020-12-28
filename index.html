@@ -19,6 +19,9 @@ body, h1 {font-family: "Raleway", sans-serif}
 .main {
   background-color: rgba(0, 0, 0, 0.75);
 }
+.navigation ul {
+  list-style-type: none;
+}
 .invert {
   -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
           filter: invert(100%);
@@ -27,6 +30,13 @@ body, h1 {font-family: "Raleway", sans-serif}
 <body class="bgimg w3-container">
 
 <div class="w3-display-container w3-animate-opacity w3-text-white">
+  <div class="navigation w3-display-topleft w3-padding-large">
+    Links
+    <ul>
+        <li><a href="consumers.html">Consumer best practices</a></li>
+        <li><a href="https://github.com/multifactor-manifesto/multifactor-manifesto.github.io">Contribute</a></li>
+    </ul>
+  </div>
   <div class="main w3-display-topmiddle w3-padding-large">
     <h1 class="w3-jumbo w3-center">Multifactor Manifesto</h1>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
@@ -54,7 +64,8 @@ body, h1 {font-family: "Raleway", sans-serif}
                 Allow customers to download backup codes, which are at least 16 characters long each and consist of
                 uppercase, lowercase and numeric characters. These can further prevent lockout if all security keys are
                 lost or damaged. Your company should treat these as passwords, and only store secure hashes of them so
-                that if your database of them is breached, hackers cannot use them.
+                that if your database of them is breached, hackers cannot use them. Furthermore, each code should be one
+                use only, to prevent replay attacks.
             </li>
         </ul>
     </p>
